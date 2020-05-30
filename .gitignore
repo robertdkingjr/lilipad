@@ -3,3 +3,5 @@
 .metadata
 Keil 8051 v9.53.0 - Debug
 .settings
+/firmware/lilipad/*.cproject
+/firmware/lilipad/*.project
