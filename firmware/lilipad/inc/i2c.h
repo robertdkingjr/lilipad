@@ -35,6 +35,7 @@ SI_SBIT(SCL, SFR_P1, 3);               // and P1.3
 #define  IDT_P9242_ADDR               (0x61 << 1) // Power TX
 #define  IDT_P9221_ADDR               (0x61 << 1) // Power RX
 #define  BQ25895_ADDR               (0x6A << 1) // Battery charger
+#define  BQ27750_ADDR               (0x6A << 1) // Battery fuel gauge + protection
 
 // Status vector - top 4 bits only
 #define  SMB_MTSTA                0xE0 // (MT) start transmitted
@@ -53,7 +54,7 @@ extern volatile uint8_t SMB_DATA_OUT;           // Global holder for SMBus data.
 
 #define P9242_NUM_COMMANDS 12
 extern uint8_t* P9242_COMMANDS[P9242_NUM_COMMANDS];
-#define P9221_NUM_COMMANDS 6
+#define P9221_NUM_COMMANDS 24
 extern uint8_t* P9221_COMMANDS[P9221_NUM_COMMANDS];
 
 extern uint8_t P9242_REG_DEV_ID_H[2];

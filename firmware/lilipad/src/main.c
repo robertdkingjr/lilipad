@@ -38,6 +38,7 @@ int main(void) {
 
 	volatile uint8_t dat;               // Test counter
 	volatile uint8_t i;
+	volatile uint8_t j;
 
 	// Call hardware initialization routine
 	enter_DefaultMode_from_RESET();
@@ -74,35 +75,45 @@ int main(void) {
 	NUM_ERRORS = 0;                     // Error counter
 	while (1)
 	{
-		TARGET = BQ25895_ADDR;             // Target the Slave for next SMBus transfer
+		TARGET = IDT_P9221_ADDR;             // Target the Slave for next SMBus transfer
+//		TARGET = BQ25895_ADDR;             // Target the Slave for next SMBus transfer
 
 		// SMBus Write Sequence
 		//	   SMB_Write(0x01);                     // Initiate SMBus write
 		//	   SMB_Write(0x04);                     // Initiate SMBus write
+
+		for(i=0; i<P9221_NUM_COMMANDS; i++) {
 //		for(i=0; i<P9242_NUM_COMMANDS; i++) {
-		for(i=0; i<0x14+1; i++) {
+//		for(i=0; i<0x14+1; i++) {
 
 //		    SMB_DATA_PTR = P9242_REG_DEV_ID_L;
-//			SMB_DATA_PTR = P9221_COMMANDS[i];
+			SMB_DATA_PTR = P9221_COMMANDS[i];
 //			SMB_DATA_PTR = P9242_COMMANDS[i];
 
 			// Write the index of the for-loop (i.e. sweep all regs between 0 and 14)
-			*SMB_DATA_ARRAY = i;
+//			*SMB_DATA_ARRAY = i;
 
-			SMB_Write(1);  // Initiate 1-byte SMBus write
-//			SMB_Write(2);  // Initiate 2-byte SMBus write
+			for (j=0; j<3; j++) {
 
-			// SMBus Read Sequence
-			SMB_Read();
+	//			SMB_Write(1);  // Initiate 1-byte SMBus write
+				SMB_Write(2);  // Initiate 2-byte SMBus write
 
-			// Run to here to view the SMB_DATA_IN and SMB_DATA_OUT variables
+				// SMBus Read Sequence
+				SMB_Read();
+			}
 
-			//	   dat++;
 			LED1 = !LED1;
-			T0_Wait_ms (1);                  // Wait 50 ms until the next cycle
-							// so that YELLOW_LED blinks slow
-							// enough to see
+			T0_Wait_ms (10); // Wait so that LED blinks slow enough to see
 
 		}
+
+//		T0_Wait_ms (1000);
+//
+//		// KILL THE BATTERY POWER
+//		SMB_DATA_ARRAY[0] = 0x09;
+//		SMB_DATA_ARRAY[1] = 0x64;
+//		SMB_DATA_PTR = SMB_DATA_ARRAY;
+//		SMB_Write(2);
+
 	}
 }

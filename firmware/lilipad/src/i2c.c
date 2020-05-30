@@ -58,8 +58,26 @@ uint8_t P9221_REG_PART_NUM_L[2] = {0x00, 0x00};
 uint8_t P9221_REG_PART_NUM_H[2] = {0x00, 0x01};
 uint8_t P9221_REG_FW_MAJOR_L[2] = {0x00, 0x04};
 uint8_t P9221_REG_FW_MAJOR_H[2] = {0x00, 0x05};
-uint8_t P9221_REG_FW_MINOR_L[2] = {0x00, 0x04};
-uint8_t P9221_REG_FW_MINOR_H[2] = {0x00, 0x05};
+uint8_t P9221_REG_FW_MINOR_L[2] = {0x00, 0x06};
+uint8_t P9221_REG_FW_MINOR_H[2] = {0x00, 0x07};
+uint8_t P9221_REG_STATUS[2] = {0x00, 0x34};
+uint8_t P9221_REG_INT_STATUS[2] = {0x00, 0x36};
+uint8_t P9221_REG_INT_ENABLE[2] = {0x00, 0x38};
+uint8_t P9221_REG_BATT_CHARGE_STATUS[2] = {0x00, 0x3A};
+uint8_t P9221_REG_END_POWER_TRANSFER[2] = {0x00, 0x3B};
+uint8_t P9221_REG_VOUT_L[2] = {0x00, 0x3C};
+uint8_t P9221_REG_VOUT_H[2] = {0x00, 0x3D};
+uint8_t P9221_REG_VRECT_L[2] = {0x00, 0x40};  // in ADC -> V = ADC * 10 * 2.1 / 4095
+uint8_t P9221_REG_VRECT_H[2] = {0x00, 0x41};
+uint8_t P9221_REG_RX_IOUT_L[2] = {0x00, 0x44};  // in mA
+uint8_t P9221_REG_RX_IOUT_H[2] = {0x00, 0x45};
+uint8_t P9221_REG_DIE_TEMP_L[2] = {0x00, 0x46};  // in C
+uint8_t P9221_REG_DIE_TEMP_H[2] = {0x00, 0x47};
+uint8_t P9221_REG_OP_FREQ_L[2] = {0x00, 0x48};  // in kHz
+uint8_t P9221_REG_OP_FREQ_H[2] = {0x00, 0x49};
+uint8_t P9221_REG_ALIGN_X[2] = {0x00, 0x4B};  // 8-bit signed integer representing alignment between Tx and Rx coil in the X-direction. The value is application-specific.
+uint8_t P9221_REG_ALIGN_Y[2] = {0x00, 0x4C};  // 8-bit signed integer representing alignment between Tx and Rx coil in the Y-direction. The value is application-specific.
+uint8_t P9221_REG_COMMAND[2] = {0x00, 0x4E};
 
 uint8_t* P9221_COMMANDS[P9221_NUM_COMMANDS] = {
 		P9221_REG_PART_NUM_L,
@@ -67,7 +85,25 @@ uint8_t* P9221_COMMANDS[P9221_NUM_COMMANDS] = {
 		P9221_REG_FW_MAJOR_L,
 		P9221_REG_FW_MAJOR_H,
 		P9221_REG_FW_MINOR_L,
-		P9221_REG_FW_MINOR_H
+		P9221_REG_FW_MINOR_H,
+		P9221_REG_STATUS,
+		P9221_REG_INT_STATUS,
+		P9221_REG_INT_ENABLE,
+		P9221_REG_BATT_CHARGE_STATUS,
+		P9221_REG_END_POWER_TRANSFER,
+		P9221_REG_VOUT_L,
+		P9221_REG_VOUT_H,
+		P9221_REG_VRECT_L,
+		P9221_REG_VRECT_H,
+		P9221_REG_RX_IOUT_L,
+		P9221_REG_RX_IOUT_H,
+		P9221_REG_DIE_TEMP_L,
+		P9221_REG_DIE_TEMP_H,
+		P9221_REG_OP_FREQ_L,
+		P9221_REG_OP_FREQ_H,
+		P9221_REG_ALIGN_X,
+		P9221_REG_ALIGN_Y,
+		P9221_REG_COMMAND,
 };
 
 
