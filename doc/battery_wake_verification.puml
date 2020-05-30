@@ -1,0 +1,9 @@
+@startuml
+
+(*) --> [RX power] "Wakeup Battery"
+--> [BAT power] "I2C Traffic + Blink LED" as i2c
+--> [Remove RX power\nConfirm still blinking] i2c
+--> [BAT Power] "Sleep Battery"
+--> [No power - system off] (*)
+
+@enduml

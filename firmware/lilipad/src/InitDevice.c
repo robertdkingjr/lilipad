@@ -25,6 +25,7 @@ extern void enter_DefaultMode_from_RESET(void) {
 	uint8_t SFRPAGE_save = SFRPAGE;
 	PORTS_0_enter_DefaultMode_from_RESET();
 	PORTS_1_enter_DefaultMode_from_RESET();
+	PORTS_3_enter_DefaultMode_from_RESET();
 	PBCFG_0_enter_DefaultMode_from_RESET();
 	TIMER01_0_enter_DefaultMode_from_RESET();
 	TIMER_SETUP_0_enter_DefaultMode_from_RESET();
@@ -192,6 +193,7 @@ extern void PBCFG_0_enter_DefaultMode_from_RESET(void) {
 	 - UART1 RTS1 unavailable at Port pin
 	 - UART1 CTS1 unavailable at Port pin
 	 ***********************************************************************/
+	SFRPAGE = 0x00;
 	XBR2 = XBR2_WEAKPUD__PULL_UPS_ENABLED | XBR2_XBARE__ENABLED
 			| XBR2_URT1E__DISABLED | XBR2_URT1RTSE__DISABLED
 			| XBR2_URT1CTSE__DISABLED;
@@ -320,6 +322,30 @@ extern void TIMER01_0_enter_DefaultMode_from_RESET(void) {
 	TCON |= (TCON_save & TCON_TR0__BMASK) | (TCON_save & TCON_TR1__BMASK);
 
 	// [Timer Restoration]$
+
+}
+
+extern void PORTS_3_enter_DefaultMode_from_RESET(void) {
+	// $[P3 - Port 3 Pin Latch]
+	// [P3 - Port 3 Pin Latch]$
+
+	// $[P3MDOUT - Port 3 Output Mode]
+	/***********************************************************************
+	 - P3.0 output is open-drain
+	 - P3.1 output is push-pull
+	 - P3.2 output is open-drain
+	 - P3.3 output is open-drain
+	 - P3.4 output is open-drain
+	 - P3.7 output is open-drain
+	 ***********************************************************************/
+	SFRPAGE = 0x20;
+	P3MDOUT = P3MDOUT_B0__OPEN_DRAIN | P3MDOUT_B1__PUSH_PULL
+			| P3MDOUT_B2__OPEN_DRAIN | P3MDOUT_B3__OPEN_DRAIN
+			| P3MDOUT_B4__OPEN_DRAIN | P3MDOUT_B7__OPEN_DRAIN;
+	// [P3MDOUT - Port 3 Output Mode]$
+
+	// $[P3MDIN - Port 3 Input Mode]
+	// [P3MDIN - Port 3 Input Mode]$
 
 }
 

@@ -23,24 +23,28 @@ SI_SBIT(SCL, SFR_P1, 3);               // and P1.3
 //-----------------------------------------------------------------------------
 #define  SYSCLK               24500000 // System clock frequency in Hz
 
-#define  SMB_FREQUENCY           10000 // Target SCL clock rate
+#define  SMB_FREQUENCY          10000 // Target SCL clock rate
                                        // This example supports between 10kHz
                                        // and 100kHz
 
-#define  WRITE                    0x00 // SMBus WRITE command
-#define  READ                     0x01 // SMBus READ command
+#define  WRITE                  0x00 // SMBus WRITE command
+#define  READ                   0x01 // SMBus READ command
 
 // Device addresses (7 bits, LSB is a don't care)
-#define  SLAVE_ADDR               (0x61 << 1) // Device address for slave target
-#define  IDT_P9242_ADDR               (0x61 << 1) // Power TX
-#define  IDT_P9221_ADDR               (0x61 << 1) // Power RX
-#define  BQ25895_ADDR               (0x6A << 1) // Battery charger
-#define  BQ27750_ADDR               (0x6A << 1) // Battery fuel gauge + protection
+#define  SLAVE_ADDR             (0x61 << 1) // Device address for slave target
+#define  IDT_P9242_ADDR         (0x61 << 1) // Power TX
+#define  IDT_P9221_ADDR         (0x61 << 1) // Power RX
+#define  BQ25895_ADDR           (0x6A << 1) // Battery charger
+#define  BQ27750_ADDR           (0x55 << 1) // Battery fuel gauge + protection
+
+// V2.0 Additions
+#define  STUSB5400_ADDR         (0x28 << 1) // USB-C controller
+#define  I2C_MUX_ADDR 			(0x70 << 1) // MUX the P9242 + P9221 (both 0x61)
 
 // Status vector - top 4 bits only
-#define  SMB_MTSTA                0xE0 // (MT) start transmitted
-#define  SMB_MTDB                 0xC0 // (MT) data byte transmitted
-#define  SMB_MRDB                 0x80 // (MR) data byte received
+#define  SMB_MTSTA              0xE0 // (MT) start transmitted
+#define  SMB_MTDB               0xC0 // (MT) data byte transmitted
+#define  SMB_MRDB               0x80 // (MR) data byte received
 // End status vector definition
 
 //-----------------------------------------------------------------------------
