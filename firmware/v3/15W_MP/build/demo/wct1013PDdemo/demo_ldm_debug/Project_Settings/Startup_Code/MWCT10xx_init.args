@@ -1,0 +1,5 @@
+-msgstyle parseable
+-debug
+-nosyspath
+-i
+"$(ProjDirPath)/Project_Headers"

@@ -1,0 +1,14 @@
+Sources/main.c
+Project_Settings/Linker_Files/MWCT1013A_Internal_PFlash_SDM.cmd
+Project_Settings/Startup_Code/MWCT10xx_init.asm
+Project_Settings/Startup_Code/MWCT10xx_vector.asm
+Project_Headers/MWCT1013A.inc
+Project_Headers/MWCT10xx_init.inc
+Project_Headers/derivative.h
+Project_Headers/MWCT1013A.h
+Utility/DSP56800E_promxram.asm
+Utility/DSP56800E_zeroBSS.asm
+Project_Settings/Debugger/MWCT1013A.tcl
+Project_Settings/Debugger/MWCT1013A.mem
+.settings/com.freescale.core.ide.newprojectwizard.prefs
+ReferencedRSESystems.xml

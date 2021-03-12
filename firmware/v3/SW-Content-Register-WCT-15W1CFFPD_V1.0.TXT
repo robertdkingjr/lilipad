@@ -1,0 +1,35 @@
+Release Name: WCT-15W1CFFPD SW
+Release Version: v1.0
+Package License: LA_OPT_NXP_Software_License.htm - Production Use, Section 2.3 applies 
+
+FreeMASTER Client         Description: NXP FreeMASTER client source code.
+                          Author: NXP
+                          License: Proprietary. See
+                          LA_OPT_NXP_Software_License file,
+                          Format: source code
+                          Location: 15W_MP/common/56800E/freemaster
+
+Bootloader source         Description: bootloader source code
+                          Author: NXP
+                          License: Proprietary. See
+                          LA_OPT_NXP_Software_License file,
+                          Format: source code
+                          Location: 15W_MP/bootloader
+
+Example code              Description: example source code, including application,
+                          configuration, driver, HAL, etc.
+                          Author: NXP
+                          License: Proprietary. See
+                          LA_OPT_NXP_Software_License file,
+                          Format: source code
+                          Location: 15W_MP/example
+
+WCT library               Description: Binary file of core library
+                          Author: NXP
+                          License: Proprietary. See
+                          LA_OPT_NXP_Software_License file,
+                          Appendix A, NXP Wireless Charging Library
+                          Format: object code
+                          Location: 15W_MP/library/bin/wct_mp_15w_consumer_pd_ldm_debug_56800e.lib
+                                    15W_MP/library/bin/wct_mp_15w_consumer_pd_ldm_release_56800e.lib
+										
