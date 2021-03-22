@@ -22,10 +22,10 @@
 #include "systemCommand.h"
 #include "systemProtection.h"
 #include "systemCallback.h"
+#include "systemPrint.h"
 
 #include "wct_debug.h"
 #include "systemTask.h"
-
 
 #define NUM_1MS_COUNTS_FOR_10MS         10U
 #define NUM_10MS_COUNTS_FOR_100MS       10U
@@ -74,7 +74,8 @@ static void AppTask_100msHandle(void)
 
 static void AppTask_1secHandler(void)
 {
-
+	uint8 lilipad_version = LILIPAD_SW_VERSION;
+	APP_PrintDoubleWordValue(lilipad_version);
 }
 
 static void AppTask_1minHandler(void)

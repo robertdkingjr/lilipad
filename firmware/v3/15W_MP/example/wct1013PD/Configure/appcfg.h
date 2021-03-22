@@ -14,6 +14,9 @@
 #define WCT_SW_VERSION                     0x1000u //x.y.z: 4 bit x, 4 bit y, 8 bit z
 #define WCT_HW_VERSION                     0x1000u //x.y.z: 4 bit x, 4 bit y, 8 bit z
 
+#define LILIPAD_HW_VERSION  3  // Lilipad v3
+#define LILIPAD_SW_VERSION  1
+
 #define DEVICE_ID_STRING                   "MPA11"
 #define NUM_DEVICES                        1u
 #define NUM_COILS_PER_DEVICE               1u
