@@ -10,8 +10,8 @@
 #ifndef __QSCI_H__
 #define __QSCI_H__
 
-#define QSCI_CONSOLE_INDEX     1	//QSCI1
-#define QSCI_FREEMASTER_INDEX  0	//QSCI0
+#define QSCI_CONSOLE_INDEX     0	//QSCI1
+#define QSCI_FREEMASTER_INDEX  1	//QSCI0
 
 void QSCI0_Init(uint32 baudrate);
 uint8 QSCI0_PutChar(uint8 byChar);

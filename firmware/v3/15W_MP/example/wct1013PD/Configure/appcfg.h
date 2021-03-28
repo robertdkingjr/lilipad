@@ -23,8 +23,8 @@
 
 #define NVM_BASE_ADDR                      ( 0x01F000UL << 1 )
 
-#define FREEMASTER_SUPPORTED	           (TRUE)
-#define DEBUG_CONSOLE_SUPPORTED            (FALSE)
+#define FREEMASTER_SUPPORTED	           (FALSE)
+#define DEBUG_CONSOLE_SUPPORTED            (TRUE)
 #define LOW_POWER_MODE_ENABLE			   (FALSE)
 
 #define DIGITAL_DCDC					   (FALSE)
